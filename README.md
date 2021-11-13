@@ -3,7 +3,7 @@
 - Clone the repo
 - Run composer install
 - Make a copy of .env from .env.example
-- Do Run database migration (here i am using sqlite you can use mysql if you want)
+- Run database migration (here i am using sqlite you can use mysql if you want)
 - Start the publisher 
 ```
 bashes/run.sh publisher
