@@ -24,4 +24,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::post('test1', [\App\Http\Controllers\SubscriptionController::class, "firstSubscriber"] );
 Route::post('test2', [\App\Http\Controllers\SubscriptionController::class, "secondSubscriper"] );
+Route::post('test3', [\App\Http\Controllers\SubscriptionController::class, "thirdSubscriper"] );
 

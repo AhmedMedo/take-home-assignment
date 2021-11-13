@@ -22,13 +22,12 @@ class SubscriptionService
     public function createSubscription(string $url, string $topic)
     {
         try {
-            $sub = new Subscription;
+            $subscription = Subscription::firstOrCreate(['url' => $url],[
+                'url'   => $url,
+                'topic' => $topic
+            ]);
 
-            $sub->url = $url;
-            $sub->topic = $topic;
-            $sub->save();
-
-            return ["data" => $sub, "message" => "subscription created", "success" => true];
+            return ["data" => $subscription, "message" => "subscription created", "success" => true];
 
         } catch (\Throwable $th) {
             Log::error("unable to create subscription", ["error" => $th->getMessage()]);

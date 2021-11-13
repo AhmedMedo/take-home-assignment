@@ -20,7 +20,7 @@ class SubscriptionController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-            "url" => ["required", "url","unique:subscriptions,url"]
+            "url" => ["required", "url"]
         ]);
 
         if ($validator->fails()) {
@@ -38,7 +38,6 @@ class SubscriptionController extends Controller
 
     public function firstSubscriber(Request $request)
     {
-
         Log::info('First Subscriber playload '.json_encode($request->all()));
         return response($request->all());
 
@@ -46,9 +45,15 @@ class SubscriptionController extends Controller
 
     public function secondSubscriper(Request $request)
     {
-
         Log::info('Second Subscriber playload '.json_encode($request->all()));
         return response($request->all());
+    }
+
+    public function thirdSubscriper(Request $request)
+    {
+        Log::info('Third Subscriber playload '.json_encode($request->all()));
+        return response($request->all());
+
     }
 
 }
